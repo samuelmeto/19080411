@@ -1,7 +1,7 @@
 ---
-title: "Title"
+title: "Comparing Economic Indicators: Tax Revenue, Unemployment Rates, and Foreign Investment across Nations"
 author: 
-  - Last Name, First Name[^1]
+  - ÖZTÜRK, MERT[^1]
 bibliography: ../bibliography/biblio.bib
 csl: ../csl/apa.csl
 header-includes:
@@ -25,7 +25,8 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
-    Write your abstract here.
+    GDP (Gross Domestic Product) is the dependent variable in the equation, and the explanatory variables are CPI (Consumer Price Index), FDI (Foreign Direct Investment), and Tax Revenue. The expected effects of these factors on GDP are captured by the coefficients ((beta_0), (beta_1), (beta_2), and (beta_3). Unaccounted-for factors are taken into account via the error term (varepsilon). With the help of this equation, it is possible to analyze the connections between GDP and the explanatory factors and make forecasts and policy judgments.
+---
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
@@ -34,41 +35,61 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== FOOTNOTES ============================== -->
 <!-- ======================================================================= -->
-[^1]: Student ID, [Github Repo](https://github.com/YOUR_USER_NAME_HERE/YOUR_REPO_NAME_HERE)
+[^1]: 19080411, [19080411](https://github.com/samuelmeto/19080411.git)
 
-# Important Information About Midterm
 
-\colorbox{BurntOrange}{WRITE YOUR GITHUB REPO LINK ON LINE 37 IN THIS FILE!}
-
-**Project Proposal submisson will be done by uploading a zip file to the ekampus system along with the Github repo link. If you do not upload a zip file to the system and do not provide a Github repo link, you will be deemed not to have entered the midterm and final exams.**
-
-**You must upload your project folder (`YourStudentID.zip` file) to *ekampus.ankara.edu.tr* until 9 June 2023, 23:59.**
-
-\colorbox{WildStrawberry}{Read the README.md file in the project folder for more information.}
 
 # Introduction
-This outline has been created to assist you in writing your project assignment. You should cite all the sources you use, articles, presentations, projects, etc. Quoting and referencing gives readers the opportunity to access the resources you refer. **Even though you use your own words, if you are conveying the ideas of others in your work, you have to document the source of these ideas. Otherwise, you are committing academic plagiarism.** For example, you can refer to @aydinonat:2007 for academic writing rules. You can find lots of online resources on this topic.
-
-The sections in your project assignment should definitely include the sections in this text. Apart from the sections used here, you can use different subsections. When writing your project, use this file as a draft and adapt its content to your purposes.
-
-In this section, mention the purpose and importance of your work in a few paragraphs.
+Gender inequality at work has been a persistent issue worldwide, with women facing numerous barriers and challenges in their career advancement. The impact of patriarchy, gender norms, and discrimination in the workplace has led to unequal pay, lack of promotions, and leadership opportunities for women, and gender-based harassment. Addressing gender inequality at work is not only essential for promoting social justice, but it also has significant implications for organizational productivity and performance. This literature review aims to explore four articles that shed light on gender inequality at work and the challenges that women face in the workplace.
 
 ## Literature Review
 
-In this section, discuss the articles you have read on the subject by giving references. This is a narrative citation @chang:2013. This one is a parenthetical citation [@chang:2013]. **Do not summarize each article individually under a separate title.** In the literature review section, **at least six** articles must be cited [@newbold:2003; @verzani:2014; @wickham:2014; @wooldridge:2015a].
+Gender inequality in the workplace is a persistent issue worldwide, with women facing numerous barriers and challenges in their career advancement. In Ataerkillik, Toplumsal Cinsiyet ve Kadının Çalışma Yaşamına Katılımı, the authors explore the impact of patriarchy and gender norms on women's participation in work life. [@kirikkaleli2023government] The study highlights the need for greater awareness and action to address gender-based discrimination and promote gender equity in the workplace. [@cotter2004gender]
 
-# Data
-In this section, discuss the source of the data set you use in your study, if you have done any operation on the raw data, these operations and the summary statistics about the data set. In this section, it is mandatory to have a table (Table \ref{tab:summary}) containing summary statistics (mean, standard deviation, minimum, maximum, etc. values) of all variables. Make the necessary references to your tables as shown in the previous sentence [@perkins:1991].
+In Psychosocial working conditions and exhaustion in a working population sample of Swedish middle-aged men and women, the authors examine the relationship between psychosocial working conditions and exhaustion in a sample of Swedish workers.[@bhorat2007unemployment] The study emphasizes the importance of improving working conditions to support employee well-being and reduce burnout.[@lindeberg2011psychosocial]
 
-R codes for the analysis should start in this section. In this section, you should include the codes that imports the data set into R and the codes that generate summary statistics.
+Similarly, KAMU ÖRGÜTLERİNDE ÇALIŞAN KADIN İŞGÖRENLERİN ÇALIŞMA YAŞAMLARINDA KARŞILAŞTIKLARI SORUNLAR ÜZERİNE BİR ARAŞTIRMA investigates the challenges faced by women working in public organizations in Turkey. The study identifies issues such as lack of support, discrimination, and gender stereotypes as significant barriers to women's career advancement.[@yilmaz2008kamu]
 
-```{r}
+Gender inequality at work remains a critical issue globally, as highlighted in the literature. Efforts to address this issue must be multi-faceted and involve addressing societal norms and attitudes, promoting workplace policies and practices that support gender equity, and addressing specific barriers faced by women in different industries and sectors.[@ozccatal2011ataerkillik]
+
+Overall, the literature suggests the need for continued research, advocacy, and action to address gender inequality in the workplace and support gender equity in all aspects of work life.
+
+
+
+
+
+
+## Dataset
+
+Based on a variety of significant economic and sociological traits of 9 countries in 2016, the data strives to generate a complex conclusion.There are 11 variables and 9 observations in it. The dataset was created using information from databank.worldbank.org.
+
+These are the 11 variables:
+
+- **Access to electricity:** shows the percentage of the population who regularly and reliably have access to power for a range of daily activities.
+- **CPI:** stands for Consumer Price Index, a measure of the average change in prices of a basket of goods and services over time that shows changes in the cost of living and inflation.
+- **GDP growth:** which is the pace at which a country's Gross Domestic Product (GDP) is rising or falling during a given time period, corresponding to the expansion or contraction of the production of the country's economy.
+- **FDI:** Foreign Direct Investment, or FDI, is the term for investments made by people, companies, or governments into another country. These investments often involve the purchase of assets or the formation of business operations in the foreign economy.**
+- **GDP per capita:** A country's Gross Domestic Product (GDP) divided by its entire population gives an estimate of the average level of economic success per person in that nation.
+- **Life expectancy at birth, male:** The average number of years a male is projected to live after birth, giving insight into the general health of the population and the mortality rates for men.
+- **Population, total:** the total number of people residing in a particular region or nation, indicating the magnitude of the population in that area.
+- **Rural population:** highlights the number of people living outside of cities and towns by referring to the percentage of the total population that lives in rural or non-urban areas.
+- **Tax revenue:** Indicates the overall amount of money the government has received through taxation and the sources of its revenue.
+- **Unemployment, female:** refers to the proportion of women who are now unemployed in the labor force, showing the severity of unemployment among female workers.
+- **Unemployment, male:** The percentage or number of men who are now unemployed in the labor force, representing the extent of unemployment among men.
+
+The graph compares all of the variables on a country-by-country basis and displays them all as numbers using different graphical techniques. The country-by-country diagrams' spoken examination leads to some broad conclusions.
+
+
+
+### Data Summary Statistics
+
+```{r, echo=FALSE}
+library(readxl)
 library(tidyverse)
 library(here)
-survey <- read_csv(here("data/survey.csv"))
+data <- read_xlsx(here("data/data.xlsx"))
 ```
 
-Note that code options are edited in some of the code chunks in the Rmd file.
 
 ```{r, echo=FALSE}
 library(xtable) 
@@ -76,11 +97,9 @@ library(summarytools)
 st_options(lang = "en")
 ```
 
-With the `echo=FALSE` option, prevent the codes from appearing in the derived pdf file and report your results in tables.
-
 ```{r results='asis', echo=FALSE}
-survey %>%
-  select("sex", "credits", "handedness", "height", "handspan") %>% 
+data %>%
+  select("Access to electricity", "CPI", "GDP growth", "FDI", "GDP per capita" , "Life expectancy at birth, male" , "Population, total", "Rural population", "Tax revenue" , "Unemployment, female", "Unemployment, male") %>% 
   descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
   xtable(caption = "Summary Statistics",
          label = "tab:summary",
@@ -88,35 +107,168 @@ survey %>%
   print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
 ```
 
+For each country, the dataset includes a number of important variables. Turkey has 79,512,426 people, a CPI of 157.42, a GDP growth rate of 3.12%, and 100% of the population has access to electricity. With a population of 65,595,565, the United Kingdom also has 100% access to electricity, a CPI of 112.54, and a GDP growth rate of 1.94%. With a CPI of 110.07, a GDP growth rate of 1.49%, and a population of 323,405,935, the United States has 100% access to electricity. With varied values for the remaining variables, Belgium, Canada, Denmark, France, Germany, and Austria all have complete access to electricity.
+
+
+
+
 
 # Methods and Data Analysis
-In this section describe the methods that you use to achieve the purpose of the study. You should use the appropriate analysis methods (such as hypothesis tests and correlation analysis) that we covered in the class. If you want, you can also use other methods that we haven't covered. If you think some method is more suitable for the purpose of the analysis and the data set, you can use that method [@newbold:2003; @verzani:2014; @wickham:2014; @wooldridge:2015a].
 
-For example, if you are performing regression analysis, discuss your predicted equation in this section. Write your equations and mathematical expressions using $LaTeX$.
+## Exploring the Relationship between Tax Revenue and GDP per Capita: A Comparative Analysis of Nations
 
-$$
-Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
-$$
+The graph (figure 1) illustrates how various nations' tax collections and GDP per capita relate to one another. A country is represented by each point on the graph, and its name is displayed along the x-axis.
+The GDP per capita, a gauge of each nation's economic output per person, is shown on the y-axis on the left side of the graph. A nation is deemed to be more rich if its GDP per capita is higher.
+The percentage of the country's economic activity that is collected in taxes is shown on the graph's right-hand y-axis, which is represented by tax revenue. A higher tax revenue percentage implies that a greater portion of the GDP is taken in the form of taxes.
 
-This section should also include different tables and plots. You can add histograms, scatter plots (such as Figure \@ref(fig:plot)), box plots, etc. Make the necessary references to your figures as shown in the previous sentence.
+Two sets of points are displayed on the graph, one colored "GDP per capita" and the other colored "Tax revenue." The points denoting tax income are shown by open circles, while the points denoting GDP per capita are denoted by solid circles.
+The following can be seen in the graph:
+
+1. The relationship between tax revenue and GDP per capita is generally positive. Higher tax revenue percentages are typically found in nations with higher GDP per capita. This shows that richer nations have the ability to raise more revenue through taxation.
+2. Denmark stands out as a unique example. Its high GDP per capita and high tax revenue percentage both point to a robust economy and a productive tax structure.
+3. Compared to their GDP per capita, France, Belgium, and Austria all have relatively high tax revenue percentages. This implies that these nations might have more complex tax structures or higher tax rates.
+4. Turkey's tax revenue as a percentage of GDP is relatively low, suggesting either lower tax rates or a less sophisticated tax system.
+In general, the graph sheds light on how the GDP per capita, a measure of economic prosperity, and tax collections for the chosen nations interact. Though particular national situations and tax policies may differ, it shows that wealthier nations generally have the capacity to raise more tax revenues.
+
+\newpage
 
 
-```{r plot, fig.align='center', fig.cap='An Awesome Plot'}
-survey %>% 
-  ggplot(aes(x = handedness, y = handspan)) +
-  geom_point() +
-  geom_smooth() +
-  scale_x_continuous("Handedness") + 
-  scale_y_continuous("Handspan")
+
+
+```{r, echo=FALSE, fig.width=10, fig.height=6}
+
+library(ggplot2)
+
+
+data <- data.frame(
+  Country = c("Turkey", "United Kingdom", "United States", "Belgium", "Canada", "Denmark", "France", "Germany", "Austria"),
+  GDP = c(14117.43687, 42039.73636, 52319.16335, 45457.89934, 50407.34133, 60670.23721, 41968.98157, 45923.00757, 48077.87836),
+  TaxRevenue = c(18.3247743, 25.5971163, 10.89324666, 23.13602613, 12.17584227, 33.73910072, 23.14513176, 11.2420604, 25.66657247)
+)
+
+
+ggplot_chart <- ggplot(data, aes(x = Country)) +
+  geom_point(aes(y = GDP, color = "GDP per capita")) +
+  geom_point(aes(y = TaxRevenue * 100, color = "Tax revenue"), shape = 2) +
+  scale_y_continuous(
+    sec.axis = sec_axis(~./100, name = "Tax revenue (%)")
+  ) +
+  labs(title = "GDP per capita and Tax revenue by Country",
+       x = "Country",
+       y = "GDP per capita",
+       color = "Variable") +
+  theme_minimal()
+
+print(ggplot_chart)
+
+
+
+
+```
+**figure 1**
+
+\newpage
+
+## Comparing Male and Female Unemployment Rates: A Cross-Country Analysis of Labor Market Dynamics
+
+The graph (figure 2) shows the rates of unemployment for men and women in various nations. The x-axis lists the names of the countries, and each bar on the graph represents one of them.
+The percentage of the labor force that is jobless is shown on the y-axis as the unemployment rate. The graph shows two sets of bars, one pink for the female unemployment rate and the other light blue for the male unemployment rate.
+The following can be seen in the graph:
+1. The unemployment rates for men and women are often similar, showing that both sexes are affected similarly by job possibilities and labor market conditions.
+2. When compared to other nations in the graph, Germany and the United States have the lowest overall unemployment rates for both men and women.
+3. Compared to the other nations shown, France and Belgium have relatively higher rates of unemployment for both sexes. This means that there may be greater difficulties in these nations' economies or employment prospects.
+4. When compared to the other nations in the graph, Turkey stands out for having greater unemployment rates for both men and women. This suggests a serious employment-related difficulty or economic scenario in Turkey.
+Overall, the graph provides insights into the gender-specific unemployment rates across different countries. It suggests that there are variations in unemployment rates between countries, and certain countries may face more significant employment challenges compared to others. Additionally, the graph highlights the importance of considering both male and female unemployment rates when analyzing labor market dynamics and identifying potential gender disparities in employment opportunities.
+
+
+
+
+
+
+
+
+
+```{r, echo=FALSE}
+
+
+
+
+
+country <- c("Turkey", "United Kingdom", "United States", "Belgium", "Canada", "Denmark", "France", "Germany", "Austria")
+unemployment_female <- c(13.52900028, 4.676000118, 4.789000034, 7.559999943, 6.238999844, 6.638000011, 9.847999573, 3.74000001, 5.535999775)
+unemployment_male <- c(9.557999611, 4.927000046, 4.93900013, 8.06000042, 7.678999901, 5.768000126, 10.24800014, 4.449999809, 6.426000118)
+
+df <- data.frame(country, unemployment_female, unemployment_male)
+
+
+
+
+ggplot(df, aes(x = country)) +
+  geom_bar(aes(y = unemployment_female), stat = "identity", fill = "pink", alpha = 0.7) +
+  geom_bar(aes(y = unemployment_male), stat = "identity", fill = "lightblue", alpha = 0.7) +
+  labs(title = "Unemployment Rates (2016)",
+       x = "Country",
+       y = "Unemployment Rate",
+       fill = "Gender") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = c("pink", "lightblue"), labels = c("Female", "Male"))
+
+```
+
+**figure 2**
+
+\newpage
+
+## Analyzing Foreign Direct Investment and Consumer Price Index: A Comparative Study of Nations' Economic Indicators
+
+
+The following can be seen in the graph (figure 3):
+1. The CPI numbers (blue bars) show the changes in the cost of living and the overall level of inflation. CPI levels above a certain threshold indicate greater inflation rates and presumably higher prices for goods and services.
+2. The FDI figures (red bars) show the volume of FDI that each nation receives from abroad. FDI is a crucial gauge of a nation's economic development and level of foreign investment.
+3. The graph shows that the United States and the United Kingdom have relatively larger FDI values than the other countries, indicating that there is more foreign investment in these two nations.
+4. Germany and Turkey both have positive FDI numbers, indicating that they are also getting FDI from outside, but at a lower rate than the US and the UK.
+5. France and Austria both have negative FDI numbers, which shows a net outflow of FDI from both nations over the observation period.
+6. The CPI values varies between nations, illustrating variations in inflation rates and cost of living. It's crucial to notice that the graph's lack of a scale for the CPI axis makes it challenging to compare the precise ranges of CPI values between different nations.
+In general, the graph sheds light on how FDI and CPI are distributed among various nations. It implies changes in the amount of foreign investment, the rate of inflation, or shifts in the cost of living. Making accurate comparisons between nations' inflation rates, however, is difficult without the precise scale of the CPI data.
+
+**figure 3**
+```{r, echo=FALSE,fig.width=10, fig.height=6}
+
+country <- c("Turkey", "United Kingdom", "United States", "Belgium", "Canada", "Denmark", "France", "Germany", "Austria")
+cpi <- c(157.4247945, 112.5419307, 110.0670089, 110.7738822, 110.2246709, 107.4011249, 105.7725809, 107.4172848, 111.6754703)
+fdi <- c(1.544826395, 10.02737042, 2.574112827, 7.916495923, 2.253728885, 2.779111458, 1.436341497, 1.669357641, -7.663360967)
+df <- data.frame(country, CPI = cpi, FDI = fdi)
+
+
+df_long <- tidyr::pivot_longer(df, cols = c(CPI, FDI), names_to = "Variable", values_to = "Value")
+
+
+ggplot(df_long, aes(x = country, y = Value, fill = Variable)) +
+  geom_bar(stat = "identity", position = "dodge", alpha = 0.7) +
+  labs(x = "Country", y = "Value", title = "Comparison of CPI and FDI (2016)") +
+  scale_fill_manual(values = c("blue", "red"), labels = c("CPI", "FDI")) +
+  theme_minimal()
+
+
 ```
 
 
+## Prediction 
+GDP (Gross Domestic Product) is the dependent variable in the equation, and the explanatory variables are CPI (Consumer Price Index), FDI (Foreign Direct Investment), and Tax Revenue. The expected effects of these factors on GDP are captured by the coefficients ((beta_0), (beta_1), (beta_2), and (beta_3). Unaccounted-for factors are taken into account via the error term (varepsilon). With the help of this equation, it is possible to analyze the connections between GDP and the explanatory factors and make forecasts and policy judgments.
+
+$$
+GDP = \beta_0 + \beta_1 \text{CPI} + \beta_2 \text{FDI} + \beta_3  \text{Tax Revenue}  + \varepsilon
+$$
+
 # Conclusion
-Summarize the results of your analysis in this section. Discuss to what extent your results responded to the research question you identified at the beginning and how this work could be improved in the future.
 
-**References section is created automatically by Rmarkdown. There is no need to change the references section in the draft file.**
+In conclusion, gender disparity in the workplace is still a serious problem around the world, with women encountering a variety of challenges in their careers. The evaluated literature has a strong emphasis on how gender roles, discrimination, and working conditions affect women's experiences at the office. For the purpose of addressing gender-based discrimination and advancing gender equity in the workplace, these articles demand greater awareness, action, and supportive policies.
 
-**_You shouldn't delete the last 3 lines. Those lines are required for References section._**
+The dataset offers insightful information about the socioeconomic characteristics of nine countries in 2016. It comprises a variety of variables, including life expectancy, population, tax revenue, access to electricity, CPI, GDP growth, FDI, GDP per capita, life expectancy in rural areas, and male and female unemployment rates. By comparing these factors across many countries, the dataset analysis creates a foundation for understanding the economic and social dynamics of each country.
+
+Overall, the literature review and dataset analysis highlight how crucial it is to keep up the fight against gender disparity at work and to advance gender equity. Organizations and society can establish environments that nurture equal opportunities and support the career advancement of women by addressing societal norms, enhancing working conditions, and enacting inclusive policies.
+
 
 \newpage
 # References {#references}
